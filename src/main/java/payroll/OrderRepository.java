@@ -3,11 +3,8 @@ package payroll;
 import org.springframework.data.jpa.repository.JpaRepository;
 import payroll.Model.Order;
 
-interface OrdersRepository extends JpaRepository<Order, Long> {
-    @Override
-    default Order findOne(Long aLong) {
-        return null;
-    }
+public interface OrderRepository extends JpaRepository<Order, Long> {
+
 /*
 This interface, though empty on the surface, packs a punch given it supports:
 

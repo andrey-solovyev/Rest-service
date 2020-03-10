@@ -13,7 +13,7 @@ import payroll.Model.Order;
 class LoadDatabase {
 
     @Bean
-    CommandLineRunner initDatabase(OrdersRepository repository) {
+    CommandLineRunner initDatabase(OrderRepository repository) {
         return args -> {
             log.info("Preloading " + repository.save(new Order("Bilbo Baggins", "burglar")));
             log.info("Preloading " + repository.save(new Employee("Frodo Baggins", "thief")));
