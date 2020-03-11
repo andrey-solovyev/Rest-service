@@ -1,0 +1,124 @@
+{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+
+    background-image:url(static/image/backgroundAdd.jpg);
+    width: 1366px;
+    height: 768px;
+}
+
+span, input, label, img {
+    display: inline-block;
+}
+input {
+    margin: 1%;
+    padding: 0.2%;
+    border: 1px solid #BEBEBE;
+    width: 20%;
+}
+textarea{
+    padding: 0.2%;
+    width:20%;
+    margin: 1%;
+}
+select{
+    width: 200px;
+    margin: 1%;
+    padding: 0.2%;
+}
+checkbox{
+    margin: 1%;
+}
+label, img {
+    width: 6em;
+}
+
+label {
+    position: relative;
+}
+
+input ~ span::after {
+    content: '';
+    padding-left: 5px;
+    vertical-align: middle;
+}
+
+
+/* Раскрашиваем input в фокусе */
+input:focus ~ span::after,
+input:focus:valid ~ span::after,
+input:focus:invalid ~ span::after {
+    content: '';
+}
+
+/* Раскрашиваем корректные input  */
+input:valid ~ span::after {
+    content:'+' ;
+    color: #4E9B5A;
+}
+
+/* Раскрашиваем ошибочные input */
+input:invalid ~ span::after {
+    content: '×';
+    color: #B11117;
+}
+
+
+input{
+    width: 200px;
+}
+textarea{
+width: 250px;
+    height: 90px;
+}
+button {
+    color: #fff;
+    background-color: #029E0A;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -o-border-radius: 25px;
+    border-radius: 25px;
+    border: none;
+    padding: 0.8% 3%;
+    -webkit-background: linear-gradient(#018D09, #0BE100);
+    -moz-background: linear-gradient(#018D09, #0BE100);
+    -o-background: linear-gradient(#018D09, #0BE100);
+    background: linear-gradient(#018D09, #0BE100);
+    position: relative;
+    overflow: hidden;
+}
+button::before {
+    position: absolute;
+    content: '';
+    height: 50%;
+    width: 96%;
+    left: 2%;
+    top: 0.9px;
+    -webkit-background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4));
+    -moz-background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4));
+    -o-background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4));
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4));
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -o-border-radius: 25px;
+    border-radius: 25px;
+}
+form{
+    border: 1px solid red;
+    padding: 5px;
+    border-radius: 0 0 20px 20px;
+    width: 420px;
+    height: 700px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -291px;
+    margin-left: -200px;
+    -webkit-box-sizing: border-box;
+}

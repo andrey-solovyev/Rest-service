@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <script src="js/main.js"></script>
+
+</head>
+<body>
+<h2>Hello</h2>
+<form method="post">
+    <button id="addUser" name="addUser" type="submit">Click Me</button>
+
+
+</form>
+<div id="search">
+    <form method="post" action="searchOrder">
+        <p><label>Имя</label>
+            <input type="text" name="name"><span></span></p>
+
+        <p><label>Фамилия</label>
+            <input type="text" name="surname"><span></span></p>
+        <button name="searchOrder" type="submit">SearchOrder</button>
+
+    </form>
+</div>
+<div id="all">
+    <button >Показать список заказов</button>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
