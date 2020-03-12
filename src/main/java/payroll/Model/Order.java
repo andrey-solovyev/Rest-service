@@ -1,43 +1,50 @@
 package payroll.Model;
 
 
-
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 @Entity
 @Data
-@Table(name="order")
+@Table(name = "o")
 public class Order {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private @Id @GeneratedValue long
+            id;
 
+    @Column(name = "warranty")
     private boolean warranty;
 
+    @Column(name = "category")
     private String category;
 
+    @Column(name = "firm")
     private String firm;
 
-    private Calendar dataGet;
+    @Column(name = "dataGet")
+    private String dataGet;
 
-    private Calendar dataEnd;
+    @Column(name = "dataEnd")
+    private String dataEnd;
 
+    @Column(name = "comment")
     private String comment;
 
+    @Column(name = "fullComment")
     private String fullComment;
 
+    @Column(name = "status")
     private String status;
 
+    @Column(name = "master")
     private String master;
 
-    private Long personId;
+
     public Order() {
     }
 
-    public Order(boolean warranty, String category, String firm, Calendar dataGet, Calendar dataEnd, String comment, String fullComment, String status, String master) {
+    public Order(boolean warranty, String category, String firm, String dataGet, String dataEnd, String comment, String fullComment, String status, String master) {
         this.warranty = warranty;
         this.category = category;
         this.firm = firm;
@@ -49,13 +56,8 @@ public class Order {
         this.master = master;
     }
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+
 
 
     public boolean isWarranty() {
@@ -82,23 +84,22 @@ public class Order {
         this.firm = firm;
     }
 
-    public Calendar getDataGet() {
+
+    public String getDataGet() {
         return dataGet;
     }
 
-    public void setDataGet(Calendar dataGet) {
+    public void setDataGet(String dataGet) {
         this.dataGet = dataGet;
     }
 
-    public Calendar getDataEnd() {
+    public String getDataEnd() {
         return dataEnd;
     }
 
-    public void setDataEnd(Calendar dataEnd) {
+    public void setDataEnd(String dataEnd) {
         this.dataEnd = dataEnd;
     }
-
-
 
     public String getStatus() {
         return status;
