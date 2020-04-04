@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml" lang="en">
+<html xmlns:th="http://thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml"
+      xmlns:v-bind="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <meta charset="utf-8">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
-    <script src="js/main.js"></script>
-
+    <link rel="stylesheet" href=" https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 <h2>Hello</h2>
@@ -26,13 +26,17 @@
 
     </form>
 </div>
-<div id="example-1">
-    <button v-on:click="counter += 1">+1</button>
-    <p>Кнопка выше была нажата {{ counter }} раз</p>
-</div>
-<div id="all">
 
+
+<div id="all">
+    <button v-on:click="show = !show">
+        Показать все заказы
+    </button>
+    <li v-if="show" v-for="order in orders" :key="order.id">
+        {{ order.id }} - {{order.firm}} - {{order.warranty}}
+    </li>
 </div>
 <script src="js/main.js"></script>
+
 </body>
 </html>

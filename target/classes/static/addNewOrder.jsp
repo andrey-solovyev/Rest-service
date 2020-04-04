@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Add new order</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link href="style/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <style>
         body {
             background-image: url(static/image/backgroundAdd.jpg); /* Путь к фоновому изображению */

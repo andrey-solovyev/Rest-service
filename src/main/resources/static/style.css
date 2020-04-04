@@ -8,7 +8,7 @@
 }
 body {
 
-    background-image:url(static/image/backgroundAdd.jpg);
+    background-image:url(image/backgroundAdd.jpg);
     width: 1366px;
     height: 768px;
 }
@@ -121,4 +121,15 @@ form{
     margin-top: -291px;
     margin-left: -200px;
     -webkit-box-sizing: border-box;
+}
+.slide-fade-enter-active {
+    transition: all .3s ease;
+}
+.slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active до версии 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
 }
