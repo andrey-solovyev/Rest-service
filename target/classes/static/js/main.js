@@ -1,4 +1,5 @@
 var messageApi = Vue.resource('http://localhost:8080/orders');
+var orderForSearch = 'http://localhost:8080/orders/';
 
 
 Vue.component('order-row',{
@@ -27,6 +28,32 @@ Vue.component('orders-list', {
 
     }
 });
+var back = new Vue({
+    data: {
+        // declare message with an empty value
+        ordersSearch: []
+    },
+    template: '<div>{{ ordersSearch.id }}  {{ordersSearch.firm}}  {{ordersSearch.warranty}}</div>'
+})
+new Vue({
+    el: '#search',
+    data:{ordersSearch:[]},
+    methods: {
+        searchById: function (message) {
+            orders = []
+            Vue.resource(orderForSearch+message).get().then(result =>
+            result.json().then(data =>
+            //.forEach(order => this.orders.push(order))\
+                orders.push(data)
+        )
+        )
+
+           // back.searchOrders = this.ordersSearch
+            console.log(orders)
+            this.ordersSearch = orders
+        }
+    },
+})
 
 
 var all=new Vue({
@@ -35,7 +62,7 @@ var all=new Vue({
     data:{
         orders:[]=this.getAllOrders(),
         state: "default",
-        show: true
+        show: false
 
     }
 

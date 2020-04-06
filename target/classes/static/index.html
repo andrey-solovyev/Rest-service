@@ -16,15 +16,13 @@
 </form>
 
 <div id="search">
-    <form method="post" action="searchOrder">
-        <p><label>Имя</label>
-            <input type="text" name="name"><span></span></p>
 
-        <p><label>Фамилия</label>
-            <input type="text" name="surname"><span></span></p>
-        <button name="searchOrder" type="submit">SearchOrder</button>
+        <input v-model="message" placeholder="Введи id">
+        <button v-on:click="searchById(message)">Search</button>
+    <li  v-for="order in ordersSearch" :key="order.id">
+        {{ order.id }} - {{order.firm}} - {{order.warranty}}
+    </li>
 
-    </form>
 </div>
 
 

@@ -19,7 +19,8 @@ class LoadDatabase {
     @Bean
     CommandLineRunner initDatabase(OrderRepository repository) {
         return args -> {
-            //log.info("Preloading " + repository.save(new Order(true,"telephone","lenovo","calendar","calendar","Q","E","O","K")));
+            //
+            // log.info("Preloading " + repository.save(new Order(true,"telephone","lenovo","calendar","calendar","Q","E","O","K")));
           //  log.info("Preloading " + repository.save(new Order(false,"Q","c",new GregorianCalendar(2017,1,5),new GregorianCalendar(2017,1,5),"Q","E","O","K")));
         };
     }
