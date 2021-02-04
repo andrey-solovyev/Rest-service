@@ -1,10 +1,9 @@
-package payroll.Model;
+package payroll.data.entity;
 
 
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.GregorianCalendar;
 
 @Entity
 @Data

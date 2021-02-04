@@ -4,8 +4,8 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;
-import payroll.Controller.OrderController;
-import payroll.Model.Order;
+import payroll.controller.OrderController;
+import payroll.data.entity.Order;
 
 @Component
 public class OrderResourceAssembler implements RepresentationModelAssembler<Order, EntityModel<Order>> {

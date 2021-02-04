@@ -1,7 +1,7 @@
-package payroll;
+package payroll.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import payroll.Model.Order;
+import payroll.data.entity.Order;
 
 public interface OrderRepository extends JpaRepository<Order, Long> {
 

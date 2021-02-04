@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org" lang="en">
+<html xmlns:th="http://thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Add new order</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>    <link href="style.css" rel="stylesheet">
     <style>
         body {
             background-image: url(static/image/backgroundAdd.jpg); /* Путь к фоновому изображению */
@@ -54,7 +54,7 @@
             <textarea type="text" name="fullproblem" ></textarea><span></span></p>
         <p><label >Мастер</label>
             <input type="text" name="master"><span></span></p>
-        <button type="submit">Оставить заявку</button>
+        <button v-on:click="searchById(message)">Search</button>
     </form>
 </div>
 <script src="js/main.js"></script>

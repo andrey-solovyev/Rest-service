@@ -1,13 +1,14 @@
-package payroll.Controller;
+package payroll.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import payroll.Exception.OrderNotFoundException;
-import payroll.Model.Order;
-import payroll.OrderRepository;
+import payroll.exception.OrderNotFoundException;
+import payroll.data.entity.Order;
+import payroll.repository.OrderRepository;
 
 // tag::hateoas-imports[]
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
+
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 // end::hateoas-imports[]
@@ -16,7 +17,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-public class  OrderController {
+public class OrderController {
 
     private final OrderRepository orderRepository;
 
@@ -26,7 +27,7 @@ public class  OrderController {
     }
 
     @GetMapping(value = "/orders")
-   public CollectionModel<EntityModel<Order>> all() {
+    public CollectionModel<EntityModel<Order>> all() {
 
         List<EntityModel<Order>> orders = orderRepository.findAll().stream()
                 .map(order -> new EntityModel<>(order,
@@ -37,16 +38,8 @@ public class  OrderController {
         return new CollectionModel<>(orders,
                 linkTo(methodOn(OrderController.class).all()).withSelfRel());
     }
-    @GetMapping("/employees/{id}")
-   public EntityModel<Order> one(@PathVariable Long id) {
 
-        Order order = orderRepository.findById(id)
-                .orElseThrow(() -> new OrderNotFoundException(id));
 
-        return new EntityModel<>(order,
-                linkTo(methodOn(OrderController.class).one(id)).withSelfRel(),
-                linkTo(methodOn(OrderController.class).all()).withRel("orders"));
-    }
     @PostMapping("/orders")
     Order newOrder(@RequestBody Order order) {
         return orderRepository.save(order);
@@ -56,7 +49,7 @@ public class  OrderController {
     EntityModel<Order> findById(@PathVariable Long id) {
         //maybe use try catch to NPE TEST IT TO NULL
         //or write code in interface
-        Order order=orderRepository.findById(id).orElseThrow(()-> new OrderNotFoundException(id));
+        Order order = orderRepository.findById(id).orElseThrow(() -> new OrderNotFoundException(id));
         return new EntityModel<Order>(order,
                 linkTo(methodOn(OrderController.class).one(id)).withSelfRel(),
                 linkTo(methodOn(OrderController.class).all()).withRel("order"));

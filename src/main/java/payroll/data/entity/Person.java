@@ -1,4 +1,4 @@
-package payroll.Model;
+package payroll.data.entity;
 
 import lombok.Data;
 
